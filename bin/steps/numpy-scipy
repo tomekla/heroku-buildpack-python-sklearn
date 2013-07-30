@@ -58,7 +58,8 @@ if (grep -iq -e "numpy" -e "scipy" requirements.txt) then
 
   # Move everything from venv directory to python directory
   if [ -d "venv" ]; then
-    rsync -q -a venv/ python/
+    #rsync -q -a venv/ python/
+    cp -r venv/* python/
     rm -r venv
   fi
 
